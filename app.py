@@ -11,38 +11,40 @@ conn = 'mongodb://localhost:27017'
 client = pymongo.MongoClient(conn)
 
 # Connect to a database. Will create one if not already available.
-db = client.collection_name
+db = client.team_db
 
 # create a route for scraping
 @app.route("/apple")
 ##### Give new name
 def Apple():
-    appl = list(db.collection_name.find())
+    appl = db.team.find()
+    print(appl)
     return jsonify(appl)
+    
 
-@app.route("/amazon")
-##### Give new name
-def AMZA():
-    amaz = list(db.collection_name.find())
-    return jsonify(amaz)   
+# @app.route("/amazon")
+# ##### Give new name
+# def AMZA():
+#     amaz = list(db.collection_name.find())
+#     return jsonify(amaz)   
 
-@app.route("/microsoft")
-##### Give new name
-def micro():
-    msft = list(db.collection_name.find())
-    return jsonify(msft) 
+# @app.route("/microsoft")
+# ##### Give new name
+# def micro():
+#     msft = list(db.collection_name.find())
+#     return jsonify(msft) 
 
-@app.route("/google")
-##### Give new name
-def Goog():
-    goog = list(db.collection_name.find())
-    return jsonify(goog)  
+# @app.route("/google")
+# ##### Give new name
+# def Goog():
+#     goog = list(db.collection_name.find())
+#     return jsonify(goog)  
 
-@app.route("/bitcoin")
-##### Give new name
-def BTC():
-    btc = list(db.collection_name.find())
-    return jsonify(btc)          
+# @app.route("/bitcoin")
+# ##### Give new name
+# def BTC():
+#     btc = list(db.collection_name.find())
+#     return jsonify(btc)          
 
 # create a index route
 @app.route('/')
