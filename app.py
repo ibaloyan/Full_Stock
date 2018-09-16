@@ -1,50 +1,56 @@
 # import dependencies
 from flask import Flask, render_template, jsonify
-import pymongo
+from flask_pymongo import PyMongo
 
 # init the Flask
 app = Flask(__name__)
 
-conn = 'mongodb://localhost:27017'
+app.config["MONGO_URI"] = 'mongodb://localhost:27017/bitcoin_y_o_y'
+mongo = PyMongo(app)
 
 # Pass connection to the pymongo instance.
-client = pymongo.MongoClient(conn)
+
 
 # Connect to a database. Will create one if not already available.
-db = client.team_db
+db = mongo.db
 
 # create a route for scraping
-@app.route("/apple")
+@app.route("/bit_y_o_y")
 ##### Give new name
 def Apple():
-    appl = db.team.find()
-    print(appl)
-    return jsonify(appl)
-    
+    btcY = db.bit_y_o_y.find_one()
+    print(btcY)
+    btcY_title = btcY["labels"]
+    btcY_numbers = btcY["numbers"]
+    btcY_dict = {"title":btcY_title, "numbers": btcY_numbers}
+    print(btcY_title)
+    # return appl_title
+    return jsonify(btcY_dict)
+
 
 # @app.route("/amazon")
 # ##### Give new name
 # def AMZA():
 #     amaz = list(db.collection_name.find())
-#     return jsonify(amaz)   
+#     return jsonify(amaz)
 
 # @app.route("/microsoft")
 # ##### Give new name
 # def micro():
 #     msft = list(db.collection_name.find())
-#     return jsonify(msft) 
+#     return jsonify(msft)
 
 # @app.route("/google")
 # ##### Give new name
 # def Goog():
 #     goog = list(db.collection_name.find())
-#     return jsonify(goog)  
+#     return jsonify(goog)
 
 # @app.route("/bitcoin")
 # ##### Give new name
 # def BTC():
 #     btc = list(db.collection_name.find())
-#     return jsonify(btc)          
+#     return jsonify(btc)
 
 # create a index route
 @app.route('/')
