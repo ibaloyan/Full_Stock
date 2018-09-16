@@ -46,6 +46,20 @@ def btc_v_all1():
     btcA_dict  = {"title":btcA_title, "numbers":btcA_numbers}
     return jsonify(btcA_dict)
 
+
+@app.route("/btc_Q")
+##### Give new name
+def btc_Q():
+    app.config["MONGO_URI"] = 'mongodb://localhost:27017/bitcoin_Q'
+    mongo = PyMongo(app)
+    db = mongo.db
+
+    btcQ = db.bitcoin_q.find_one()
+    print(btcQ)
+    btcQ_title = btcQ["labels"]
+    btcQ_numbers = btcQ["numbers"]
+    btcQ_dict  = {"title":btcQ_title, "numbers":btcQ_numbers}
+    return jsonify(btcQ_dict)
 # @app.route("/microsoft")
 # ##### Give new name
 # def micro():
