@@ -5,19 +5,23 @@ from flask_pymongo import PyMongo
 # init the Flask
 app = Flask(__name__)
 
-app.config["MONGO_URI"] = 'mongodb://localhost:27017/bitcoin_y_o_y'
-mongo = PyMongo(app)
-
-# Pass connection to the pymongo instance.
-
-
-# Connect to a database. Will create one if not already available.
-db = mongo.db
+# app.config["MONGO_URI"] = 'mongodb://localhost:27017/bitcoin_y_o_y'
+# mongo = PyMongo(app)
+#
+# # Pass connection to the pymongo instance.
+#
+#
+# # Connect to a database. Will create one if not already available.
+# db = mongo.db
 
 # create a route for scraping
 @app.route("/bit_y_o_y")
 ##### Give new name
-def Apple():
+def BTC_vs_BTC():
+    app.config["MONGO_URI"] = 'mongodb://localhost:27017/bitcoin_y_o_y'
+    mongo = PyMongo(app)
+    db = mongo.db
+
     btcY = db.bit_y_o_y.find_one()
     print(btcY)
     btcY_title = btcY["labels"]
@@ -28,11 +32,19 @@ def Apple():
     return jsonify(btcY_dict)
 
 
-# @app.route("/amazon")
-# ##### Give new name
-# def AMZA():
-#     amaz = list(db.collection_name.find())
-#     return jsonify(amaz)
+@app.route("/btc_v_all")
+##### Give new name
+def btc_v_all1():
+    app.config["MONGO_URI"] = 'mongodb://localhost:27017/bitcoin_v_All'
+    mongo = PyMongo(app)
+    db = mongo.db
+
+    btcA = db.bitcoin_v_All1.find_one()
+    print(btcA)
+    btcA_title = btcA["labels"]
+    btcA_numbers = btcA["numbers"]
+    btcA_dict  = {"title":btcA_title, "numbers":btcA_numbers}
+    return jsonify(btcA_dict)
 
 # @app.route("/microsoft")
 # ##### Give new name
