@@ -1,50 +1,116 @@
 # import dependencies
 from flask import Flask, render_template, jsonify
-import pymongo
+from flask_pymongo import PyMongo
 
 # init the Flask
 app = Flask(__name__)
 
-conn = 'mongodb://localhost:27017'
-
-# Pass connection to the pymongo instance.
-client = pymongo.MongoClient(conn)
-
-# Connect to a database. Will create one if not already available.
-db = client.team_db
+# app.config["MONGO_URI"] = 'mongodb://localhost:27017/bitcoin_y_o_y'
+# mongo = PyMongo(app)
+#
+# # Pass connection to the pymongo instance.
+#
+#
+# # Connect to a database. Will create one if not already available.
+# db = mongo.db
 
 # create a route for scraping
-@app.route("/apple")
+@app.route("/bit_y_o_y")
 ##### Give new name
-def Apple():
-    appl = db.team.find()
-    print(appl)
-    return jsonify(appl)
-    
+def BTC_vs_BTC():
+    app.config["MONGO_URI"] = 'mongodb://localhost:27017/bitcoin_y_o_y'
+    mongo = PyMongo(app)
+    db = mongo.db
 
-# @app.route("/amazon")
-# ##### Give new name
-# def AMZA():
-#     amaz = list(db.collection_name.find())
-#     return jsonify(amaz)   
+    btcY = db.bit_y_o_y.find_one()
+    print(btcY)
+    btcY_title = btcY["labels"]
+    btcY_numbers = btcY["numbers"]
+    btcY_dict = {"title":btcY_title, "numbers": btcY_numbers}
+    print(btcY_title)
+    # return appl_title
+    return jsonify(btcY_dict)
 
-# @app.route("/microsoft")
-# ##### Give new name
-# def micro():
-#     msft = list(db.collection_name.find())
-#     return jsonify(msft) 
 
-# @app.route("/google")
-# ##### Give new name
-# def Goog():
-#     goog = list(db.collection_name.find())
-#     return jsonify(goog)  
+@app.route("/btc_v_all")
+def btc_v_all1():
+    app.config["MONGO_URI"] = 'mongodb://localhost:27017/bitcoin_v_All'
+    mongo = PyMongo(app)
+    db = mongo.db
 
-# @app.route("/bitcoin")
-# ##### Give new name
-# def BTC():
-#     btc = list(db.collection_name.find())
-#     return jsonify(btc)          
+    btcA = db.bitcoin_v_All1.find_one()
+    print(btcA)
+    btcA_title = btcA["labels"]
+    btcA_numbers = btcA["numbers"]
+    btcA_dict  = {"title":btcA_title, "numbers":btcA_numbers}
+    return jsonify(btcA_dict)
+
+
+@app.route("/btc_Q")
+def btc_Q():
+    app.config["MONGO_URI"] = 'mongodb://localhost:27017/bitcoin_Q'
+    mongo = PyMongo(app)
+    db = mongo.db
+
+    btcQ = db.bitcoin_q.find_one()
+    print(btcQ)
+    btcQ_title = btcQ["labels"]
+    btcQ_numbers = btcQ["numbers"]
+    btcQ_dict  = {"title":btcQ_title, "numbers":btcQ_numbers}
+    return jsonify(btcQ_dict)
+#
+@app.route("/applY")
+def applY():
+    app.config["MONGO_URI"] = 'mongodb://localhost:27017/Apple_y_y'
+    mongo = PyMongo(app)
+    db = mongo.db
+
+    applY = db.apple_y_o_y.find_one()
+    print(applY)
+    applY_title = applY["labels"]
+    applY_numbers = applY["numbers"]
+    applY_dict  = {"title":applY_title, "numbers":applY_numbers}
+    return jsonify(applY_dict)
+
+@app.route("/IBMY")
+def ibmY():
+    app.config["MONGO_URI"] = 'mongodb://localhost:27017/IBM_y_y'
+    mongo = PyMongo(app)
+    db = mongo.db
+
+    ibmY = db.ibm_y_o_y.find_one()
+    print(ibmY)
+    ibmY_title = ibmY["labels"]
+    ibmY_numbers = ibmY["numbers"]
+    ibmY_dict  = {"title":ibmY_title, "numbers":ibmY_numbers}
+    return jsonify(ibmY_dict)
+
+@app.route("/IntelY")
+def intelY():
+    app.config["MONGO_URI"] = 'mongodb://localhost:27017/Intel_y_y'
+    mongo = PyMongo(app)
+    db = mongo.db
+
+    intelY = db.intel_y_o_y.find_one()
+    print(intelY)
+    intelY_title = intelY["labels"]
+    intelY_numbers = intelY["numbers"]
+    intelY_dict  = {"title":intelY_title, "numbers":intelY_numbers}
+    return jsonify(intelY_dict)
+
+
+@app.route("/MSFTY")
+def msftY():
+    app.config["MONGO_URI"] = 'mongodb://localhost:27017/MSFT_y_y'
+    mongo = PyMongo(app)
+    db = mongo.db
+
+    msftlY = db.msft_y_o_y.find_one()
+    print(msftlY)
+    msftlY_title = msftlY["labels"]
+    msftlY_numbers = msftlY["numbers"]
+    msftlY_dict  = {"title":msftlY_title, "numbers":msftlY_numbers}
+    return jsonify(msftlY_dict)
 
 # create a index route
 @app.route('/')
