@@ -71,7 +71,10 @@ def applY():
     applY_title = applY["labels"]
     applY_numbers = applY["numbers"]
     applY_Dates = applY["Dates"]
-    applY_dict  = {"title":applY_title, "numbers":applY_numbers, "Dates": applY_Dates}
+    applY_nDates = applY["Dates_Normal"]
+    applY_Vol = applY["Volume"]
+    applY_Close = applY["Close"]
+    applY_dict  = {"title":applY_title, "Change":applY_numbers, "Dates": applY_Dates, "DatesN": applY_nDates, "Volume": applY_Vol, "Close": applY_Close}
     return jsonify(applY_dict)
 
 @app.route("/IBMY")
@@ -85,7 +88,10 @@ def ibmY():
     ibmY_title = ibmY["labels"]
     ibmY_numbers = ibmY["numbers"]
     imbY_Dates = ibmY["Dates"]
-    ibmY_dict  = {"title":ibmY_title, "numbers":ibmY_numbers, "Dates":imbY_Dates}
+    imbY_DatesN = ibmY["Dates_Normal"]
+    imbY_Vol = ibmY["Volume"]
+    imbY_Close = ibmY["Close"]
+    ibmY_dict  = {"title":ibmY_title, "Change":ibmY_numbers, "Dates":imbY_Dates, "DatesN": imbY_DatesN, "Volume": imbY_Vol, "Close":imbY_Close}
     return jsonify(ibmY_dict)
 
 @app.route("/IntelY")
@@ -99,7 +105,10 @@ def intelY():
     intelY_title = intelY["labels"]
     intelY_numbers = intelY["numbers"]
     intelY_Dates = intelY["Dates"]
-    intelY_dict  = {"title":intelY_title, "numbers":intelY_numbers, "Dates": intelY_Dates}
+    intelY_DatesN = intelY["Dates_Normal"]
+    intelY_Vol = intelY["Volume"]
+    intelY_Close = intelY["Close"]
+    intelY_dict  = {"title":intelY_title, "Change":intelY_numbers, "Dates": intelY_Dates, "DatesN": intelY_DatesN, "Volume": intelY_Vol, "Close":intelY_Close}
     return jsonify(intelY_dict)
 
 
@@ -114,7 +123,10 @@ def msftY():
     msftlY_title = msftlY["labels"]
     msftlY_numbers = msftlY["numbers"]
     msftlY_Date = msftlY["Dates"]
-    msftlY_dict  = {"title":msftlY_title, "numbers":msftlY_numbers, "Dates": msftlY_Date}
+    msftlYY_DatesN = msftlY["Dates_Normal"]
+    msftlY_Vol = msftlY["Volume"]
+    msftlYY_Close = msftlY["Close"]
+    msftlY_dict  = {"title":msftlY_title, "Change":msftlY_numbers, "Dates": msftlY_Date, "DatesN": msftlYY_DatesN, "Volume": msftlY_Vol, "Close":msftlYY_Close}
     return jsonify(msftlY_dict)
 
 # create a index route
