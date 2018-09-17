@@ -42,7 +42,8 @@ def btc_v_all1():
     print(btcA)
     btcA_title = btcA["labels"]
     btcA_numbers = btcA["numbers"]
-    btcA_dict  = {"title":btcA_title, "numbers":btcA_numbers}
+    btcA_Dates = btcA["Dates"]
+    btcA_dict  = {"title":btcA_title, "numbers":btcA_numbers, "Dates": btcA_Dates}
     return jsonify(btcA_dict)
 
 
@@ -69,7 +70,8 @@ def applY():
     print(applY)
     applY_title = applY["labels"]
     applY_numbers = applY["numbers"]
-    applY_dict  = {"title":applY_title, "numbers":applY_numbers}
+    applY_Dates = applY["Dates"]
+    applY_dict  = {"title":applY_title, "numbers":applY_numbers, "Dates": applY_Dates}
     return jsonify(applY_dict)
 
 @app.route("/IBMY")
@@ -82,7 +84,8 @@ def ibmY():
     print(ibmY)
     ibmY_title = ibmY["labels"]
     ibmY_numbers = ibmY["numbers"]
-    ibmY_dict  = {"title":ibmY_title, "numbers":ibmY_numbers}
+    imbY_Dates = ibmY["Dates"]
+    ibmY_dict  = {"title":ibmY_title, "numbers":ibmY_numbers, "Dates":imbY_Dates}
     return jsonify(ibmY_dict)
 
 @app.route("/IntelY")
@@ -95,7 +98,8 @@ def intelY():
     print(intelY)
     intelY_title = intelY["labels"]
     intelY_numbers = intelY["numbers"]
-    intelY_dict  = {"title":intelY_title, "numbers":intelY_numbers}
+    intelY_Dates = intelY["Dates"]
+    intelY_dict  = {"title":intelY_title, "numbers":intelY_numbers, "Dates": intelY_Dates}
     return jsonify(intelY_dict)
 
 
@@ -109,7 +113,8 @@ def msftY():
     print(msftlY)
     msftlY_title = msftlY["labels"]
     msftlY_numbers = msftlY["numbers"]
-    msftlY_dict  = {"title":msftlY_title, "numbers":msftlY_numbers}
+    msftlY_Date = msftlY["Dates"]
+    msftlY_dict  = {"title":msftlY_title, "numbers":msftlY_numbers, "Dates": msftlY_Date}
     return jsonify(msftlY_dict)
 
 # create a index route
