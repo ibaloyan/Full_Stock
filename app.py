@@ -60,7 +60,6 @@ def btc_Q():
     return jsonify(btcQ_dict)
 #
 @app.route("/applY")
-
 def applY():
     app.config["MONGO_URI"] = 'mongodb://localhost:27017/Apple_y_y'
     mongo = PyMongo(app)
@@ -85,6 +84,33 @@ def ibmY():
     ibmY_numbers = ibmY["numbers"]
     ibmY_dict  = {"title":ibmY_title, "numbers":ibmY_numbers}
     return jsonify(ibmY_dict)
+
+@app.route("/IntelY")
+def intelY():
+    app.config["MONGO_URI"] = 'mongodb://localhost:27017/Intel_y_y'
+    mongo = PyMongo(app)
+    db = mongo.db
+
+    intelY = db.intel_y_o_y.find_one()
+    print(intelY)
+    intelY_title = intelY["labels"]
+    intelY_numbers = intelY["numbers"]
+    intelY_dict  = {"title":intelY_title, "numbers":intelY_numbers}
+    return jsonify(intelY_dict)
+
+
+@app.route("/MSFTY")
+def msftY():
+    app.config["MONGO_URI"] = 'mongodb://localhost:27017/MSFT_y_y'
+    mongo = PyMongo(app)
+    db = mongo.db
+
+    msftlY = db.msft_y_o_y.find_one()
+    print(msftlY)
+    msftlY_title = msftlY["labels"]
+    msftlY_numbers = msftlY["numbers"]
+    msftlY_dict  = {"title":msftlY_title, "numbers":msftlY_numbers}
+    return jsonify(msftlY_dict)
 
 # create a index route
 @app.route('/')
