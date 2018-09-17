@@ -33,7 +33,6 @@ def BTC_vs_BTC():
 
 
 @app.route("/btc_v_all")
-##### Give new name
 def btc_v_all1():
     app.config["MONGO_URI"] = 'mongodb://localhost:27017/bitcoin_v_All'
     mongo = PyMongo(app)
@@ -48,7 +47,6 @@ def btc_v_all1():
 
 
 @app.route("/btc_Q")
-##### Give new name
 def btc_Q():
     app.config["MONGO_URI"] = 'mongodb://localhost:27017/bitcoin_Q'
     mongo = PyMongo(app)
@@ -60,23 +58,33 @@ def btc_Q():
     btcQ_numbers = btcQ["numbers"]
     btcQ_dict  = {"title":btcQ_title, "numbers":btcQ_numbers}
     return jsonify(btcQ_dict)
-# @app.route("/microsoft")
-# ##### Give new name
-# def micro():
-#     msft = list(db.collection_name.find())
-#     return jsonify(msft)
+#
+@app.route("/applY")
 
-# @app.route("/google")
-# ##### Give new name
-# def Goog():
-#     goog = list(db.collection_name.find())
-#     return jsonify(goog)
+def applY():
+    app.config["MONGO_URI"] = 'mongodb://localhost:27017/Apple_y_y'
+    mongo = PyMongo(app)
+    db = mongo.db
 
-# @app.route("/bitcoin")
-# ##### Give new name
-# def BTC():
-#     btc = list(db.collection_name.find())
-#     return jsonify(btc)
+    applY = db.apple_y_o_y.find_one()
+    print(applY)
+    applY_title = applY["labels"]
+    applY_numbers = applY["numbers"]
+    applY_dict  = {"title":applY_title, "numbers":applY_numbers}
+    return jsonify(applY_dict)
+
+@app.route("/IBMY")
+def ibmY():
+    app.config["MONGO_URI"] = 'mongodb://localhost:27017/IBM_y_y'
+    mongo = PyMongo(app)
+    db = mongo.db
+
+    ibmY = db.ibm_y_o_y.find_one()
+    print(ibmY)
+    ibmY_title = ibmY["labels"]
+    ibmY_numbers = ibmY["numbers"]
+    ibmY_dict  = {"title":ibmY_title, "numbers":ibmY_numbers}
+    return jsonify(ibmY_dict)
 
 # create a index route
 @app.route('/')
