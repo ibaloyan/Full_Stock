@@ -165,13 +165,37 @@ def populate():
     labels.append("July 2018")
     labels.append("August 2018")
 
+    ib1 = IBMdata.iloc[:170]
+    ib2 = IBMdata.iloc[170:340]
+    ib3 = IBMdata.iloc[340:510]
+    ib4 = IBMdata.iloc[510:]
+
+    ib1_O = ib1.iloc[:1]["Open"]
+    ib1_C = ib1.iloc[169:]["Close"]
+    ib1D = round((int(ib1_C)-int(ib1_O))/int(ib1_O)*100,2)
+
+    ib2_O = ib2.iloc[:1]["Open"]
+    ib2_C = ib2.iloc[169:]["Close"]
+    ib2D = round((int(ib2_C)-int(ib2_O))/int(ib2_O)*100,2)
+
+    ib3_O = ib3.iloc[:1]["Open"]
+    ib3_C = ib3.iloc[169:]["Close"]
+    ib3D = round((int(ib3_C)-int(ib3_O))/int(ib3_O)*100,2)
+
+    ib4_O = ib4.iloc[:1]["Open"]
+    ib4_C = ib4.iloc[170:]["Close"]
+    ib4D = round((int(ib4_C)-int(ib4_O))/int(ib4_O)*100,2)
+
     IBM_json = {
         "numbers": changes,
         "labels": labels,
         "Dates": gg,
         "Dates_Normal": ggN,
         "Volume": Volume,
-        "Close": Close
+        "Close": Close,
+        "Qs": [ib1D, ib2D, ib3D, ib4D],
+        "Qmarks": ["1","2","3","4"]
+
     }
 
     conn = 'mongodb://localhost:27017'
@@ -243,13 +267,37 @@ def populate():
     labels.pop(0)
     labels.pop(0)
 
+    in_sort1 = Inteldata.iloc[:115]
+    in_sort2 = Inteldata.iloc[115:231]
+    in_sort3 = Inteldata.iloc[231:347]
+    in_sort4 = Inteldata.iloc[347:]
+
+    i1_O = in_sort1.iloc[:1]["Open"]
+    i1_C = in_sort1.iloc[114:]["Close"]
+    i1 = round((int(i1_C)-int(i1_O))/int(i1_O)*100,2)
+
+    i2_O = in_sort2.iloc[:1]["Open"]
+    i2_C = in_sort2.iloc[115:]["Close"]
+    i2 = round((int(i2_C)-int(i2_O))/int(i2_O)*100,2)
+
+    i3_O = in_sort3.iloc[:1]["Open"]
+    i3_C = in_sort3.iloc[115:]["Close"]
+    i3 = round((int(i3_C)-int(i3_O))/int(i3_O)*100,2)
+
+    i4_O = in_sort4.iloc[:1]["Open"]
+    i4_C = in_sort4.iloc[115:]["Close"]
+    i4 = round((int(i4_C)-int(i4_O))/int(i4_O)*100,2)
+
     Intel_json = {
         "numbers": changes,
         "labels": labels,
         "Dates": gg,
         "Dates_Normal": ggN,
         "Volume": Volume,
-        "Close": Close
+        "Close": Close,
+        "Qs": [i1, i2, i3, i4],
+        "Qmarks": ["1","2","3","4"]
+
     }
 
     db = client.Intel_y_y
@@ -316,13 +364,35 @@ def populate():
     labels.pop(0)
     labels.pop(0)
 
+    m_sort1 = Micodata.iloc[:98]
+    m_sort2 = Micodata.iloc[98:196]
+    m_sort3 = Micodata.iloc[196:293]
+    m_sort4 = Micodata.iloc[293:]
+
+    m1_O = m_sort1.iloc[:1]["Open"]
+    m1_C = m_sort1.iloc[97:]["Close"]
+    m1 = round((int(m1_C)-int(m1_O))/int(m1_O)*100,2)
+
+    m2_O = m_sort2.iloc[:1]["Open"]
+    m2_C = m_sort2.iloc[97:]["Close"]
+    m2 = round((int(m2_C)-int(m2_O))/int(m2_O)*100,2)
+
+    m3_O = m_sort3.iloc[:1]["Open"]
+    m3_C = m_sort3.iloc[96:]["Close"]
+    m3 = round((int(m3_C)-int(m3_O))/int(m3_O)*100,2)
+
+    m4_O = m_sort4.iloc[:1]["Open"]
+    m4_C = m_sort4.iloc[97:]["Close"]
+    m4 = round((int(m4_C)-int(m4_O))/int(m4_O)*100,2)
     MSFT_json = {
         "numbers": changes,
         "labels": labels,
         "Dates": gg,
         "Dates_Normal": ggN,
         "Volume": Volume,
-        "Close": Close
+        "Close": Close,
+        "Qs": [m1, m2, m3, m4],
+        "Qmarks": ["1","2","3","4"]
     }
 
     db = client.MSFT_y_y
