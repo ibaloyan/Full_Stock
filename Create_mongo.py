@@ -61,13 +61,36 @@ def populate():
     labels.append("August 2018")
     labels = ["Dec1980"] + labels
 
+    apple_sort1 = Appledata.iloc[:113]
+    apple_sort2 = Appledata.iloc[113:226]
+    apple_sort3 = Appledata.iloc[226:340]
+    apple_sort4 = Appledata.iloc[340:]
+
+    a1_O = apple_sort1.iloc[:1]["Open"]
+    a1_C = apple_sort1.iloc[112:]["Close"]
+    a1 = round((int(a1_C)-int(a1_O))/int(a1_O)*100,2)
+
+    a2_O = apple_sort2.iloc[:1]["Open"]
+    a2_C = apple_sort2.iloc[112:]["Close"]
+    a2 = round((int(a2_C)-int(a2_O))/int(a2_O)*100,2)
+
+    a3_O = apple_sort3.iloc[:1]["Open"]
+    a3_C = apple_sort3.iloc[113:]["Close"]
+    a3 = round((int(a3_C)-int(a3_O))/int(a3_O)*100,2)
+
+    a4_O = apple_sort4.iloc[:1]["Open"]
+    a4_C = apple_sort4.iloc[113:]["Close"]
+    a4 = round((int(a4_C)-int(a4_O))/int(a4_O)*100,2)
+
     Appl_json = {
         "numbers": changes,
         "labels": labels,
         "Dates": gg,
         "Dates_Normal": ggN,
         "Volume": Volume,
-        "Close": Close
+        "Close": Close,
+        "Qs": [a1, a2, a3, a4],
+        "Qmarks": ["1","2","3","4"]
     }
 
     import pymongo
