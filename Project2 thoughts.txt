@@ -1,0 +1,33 @@
+Project 2
+Cryptocurrency 
+Visualizations - drop down options, pie charts, cnalde stick on top of something 
+Python to create json  , to return plotly to plotgraph
+Javascript for the functionality
+- chartjs
+
+The Story:
+Could be the money  of the future.
+Introduction - 
+
+What is cryptocurrency? ( 2min) 
+a cryptocurrency is a digital asset that can be exchanged.
+For example : 
+
+Why Cryptocurrency?
+to avoid fees from banks
+trust banks less
+unknown fees from banks crypto doesnt provide that
+its a lot easier to exchang
+
+What is the problem?
+
+
+
+bitcoin year over year compared to itselft
+bitcoind month over month compared to market
+apple, amazon, google, microsoft, bitcoin
+import python
+create DB 
+look each row by month
+calcuate own average ( monthly)
+compare monthly or first and last day of each month 
