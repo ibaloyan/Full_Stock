@@ -22,6 +22,10 @@ function buildPlot3(stock3) {
     var endDate = "2018-09-30";
     var dates3 = data3.Dates;
     var PercentChanges3 = data3.Change;
+    // for( var i = 0 ; i < PercentChanges3.length ; i++ ) {
+    //   PercentChanges3[i] = PercentChanges3[i] + "%";
+    //   console.log ( "PercentChanges3", PercentChanges3)
+    // };
     console.log( "Data3", data3)
 
     var trace3 = {
@@ -32,7 +36,7 @@ function buildPlot3(stock3) {
       y: PercentChanges3,
       line: {
         color: "green",
-        width: 3
+        width: 2
       },
       font: {
         family: 'Arial',
@@ -98,10 +102,15 @@ function buildPlot1(stock1) {
 
     var name1 = "Microsoft"; // for the legend on the side of the graph
     var labels1 = data1.title;
-    // var startDate = "1980-12-31";
-    // var endDate = "2018-09-30";
+    var startDate = "1980-12-31";
+    var endDate = "2018-09-30";
     var dates1 = data1.Dates;
     var PercentChanges1 = data1.Change;
+    // for( var i = 0 ; i < PercentChanges1.length ; i++ ) {
+    //   PercentChanges1[i] = PercentChanges1[i] + "%";
+    //   console.log ( "PercentChanges1", PercentChanges1)
+    // };
+
     console.log( "Data1", data1)
 
     var trace1 = {
@@ -123,6 +132,28 @@ function buildPlot1(stock1) {
     };
 
     var data1 = [trace1];
+
+    // var layout = {
+    //   showlegend: true,
+    //   // height: 600,
+    //   // width: 900,
+    //   title: "Microsoft, Apple, Intel, IBM Stocks Percent Change over Security Life Span",
+    //   xaxis: {
+    //     title: "Securities Life Span",
+    //     font: {
+    //       family: 'Arial',
+    //       size: 16,
+    //       color: 'black'
+    //     },
+    //     range: [startDate, endDate],
+    //     type: "date"
+    //   },
+    //   yaxis: {
+    //     title: "Percent Change",
+    //     autorange: true,
+    //     type: "linear"
+    //   }
+    // };
      
     // Update Plot1 with Microsoft Data
        Plotly.addTraces("plot1", data1);
@@ -149,10 +180,14 @@ function buildPlot2(stock2) {
 
     var name2 = "Apple"; // for the legend on the side of the graph
     var labels2 = data2.title;
-    // var startDate = "1980-12-31";
-    // var endDate = "2018-09-30";
+    var startDate = "1980-12-31";
+    var endDate = "2018-09-30";
     var dates2 = data2.Dates;
     var PercentChanges2 = data2.Change;
+    // for( var i = 0 ; i < PercentChanges2.length ; i++ ) {
+    //   PercentChanges2[i] = PercentChanges2[i] + "%";
+    //   console.log ( "PercentChanges2", PercentChanges2)
+    // };
     console.log( "Data2", data2)
 
     var trace2 = {
@@ -175,6 +210,27 @@ function buildPlot2(stock2) {
 
     var data2 = [trace2];
 
+    // var layout = {
+    //   showlegend: true,
+    //   // height: 1200,
+    //   // width: 1200,
+    //   title: "Microsoft, Apple, Intel, IBM Stocks Percent Change over Security Life Span",
+    //   xaxis: {
+    //     title: "Securities Life Span",
+    //     font: {
+    //       family: 'Arial',
+    //       size: 16,
+    //       color: 'black'
+    //     },
+    //     range: [startDate, endDate],
+    //     type: "date"
+    //   },
+    //   yaxis: {
+    //     title: "Percent Change",
+    //     autorange: true,
+    //     type: "linear"
+    //   }
+    // };
        // Update Plot1 with Apple Data
        Plotly.addTraces("plot1", data2);
 
@@ -200,8 +256,8 @@ function buildPlot4(stock4) {
 
     var name4 = "Intel"; // for the legend on the side of the graph
     var labels4 = data4.title;
-    // var startDate = "1980-12-31";
-    // var endDate = "2018-09-30";
+    var startDate = "1980-12-31";
+    var endDate = "2018-09-30";
     var dates4 = data4.Dates;
     var PercentChanges4 = data4.Change;
     // for( var i = 0 ; i < PercentChanges4.length ; i++ ) {
@@ -230,6 +286,28 @@ function buildPlot4(stock4) {
 
     var data4 = [trace4];
 
+    var layout = {
+      showlegend: true,
+      // height: 1200,
+      // width: 1200,
+      title: "Microsoft, Apple, Intel, IBM Stocks Percent Change over Security Life Span",
+      xaxis: {
+        title: "Securities Life Span",
+        font: {
+          family: 'Arial',
+          size: 16,
+          color: 'black'
+        },
+        range: [startDate, endDate],
+        type: "date"
+      },
+      yaxis: {
+        title: "Percent Change",
+        autorange: true,
+        type: "linear"
+      }
+    };
+  
       // Update Plot1 with Intel Data
        Plotly.addTraces("plot1", data4);
 
