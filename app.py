@@ -77,7 +77,10 @@ def applY():
     applY_nDates = applY["Dates_Normal"]
     applY_Vol = applY["Volume"]
     applY_Close = applY["Close"]
-    applY_dict  = {"title":applY_title, "Change":applY_numbers, "Dates": applY_Dates, "DatesN": applY_nDates, "Volume": applY_Vol, "Close": applY_Close}
+    applY_Q = applY["Qs"]
+    applY_Ql = applY["Qmarks"]
+    applY_dict  = {"title":applY_title, "Change":applY_numbers, "Dates": applY_Dates, "DatesN": applY_nDates, "Volume": applY_Vol, "Close": applY_Close,
+    "Qs": applY_Q, "Qmarks": applY_Ql}
     return jsonify(applY_dict)
 
 @app.route("/IBMY")
