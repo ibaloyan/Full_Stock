@@ -1,6 +1,9 @@
 # import dependencies
 from flask import Flask, render_template, jsonify
 from flask_pymongo import PyMongo
+import Create_mongo
+
+Create_mongo.populate()
 
 # init the Flask
 app = Flask(__name__)
