@@ -1,6 +1,9 @@
 # import dependencies
 from flask import Flask, render_template, jsonify
 from flask_pymongo import PyMongo
+import Create_mongo
+
+Create_mongo.populate()
 
 # init the Flask
 app = Flask(__name__)
@@ -74,7 +77,10 @@ def applY():
     applY_nDates = applY["Dates_Normal"]
     applY_Vol = applY["Volume"]
     applY_Close = applY["Close"]
-    applY_dict  = {"title":applY_title, "Change":applY_numbers, "Dates": applY_Dates, "DatesN": applY_nDates, "Volume": applY_Vol, "Close": applY_Close}
+    applY_Q = applY["Qs"]
+    applY_Ql = applY["Qmarks"]
+    applY_dict  = {"title":applY_title, "Change":applY_numbers, "Dates": applY_Dates, "DatesN": applY_nDates, "Volume": applY_Vol, "Close": applY_Close,
+    "Qs": applY_Q, "Qmarks": applY_Ql}
     return jsonify(applY_dict)
 
 @app.route("/IBMY")
@@ -91,7 +97,10 @@ def ibmY():
     imbY_DatesN = ibmY["Dates_Normal"]
     imbY_Vol = ibmY["Volume"]
     imbY_Close = ibmY["Close"]
-    ibmY_dict  = {"title":ibmY_title, "Change":ibmY_numbers, "Dates":imbY_Dates, "DatesN": imbY_DatesN, "Volume": imbY_Vol, "Close":imbY_Close}
+    ibmY_Q = ibmY["Qs"]
+    ibmY_Ql = ibmY["Qmarks"]
+    ibmY_dict  = {"title":ibmY_title, "Change":ibmY_numbers, "Dates":imbY_Dates, "DatesN": imbY_DatesN, "Volume": imbY_Vol, "Close":imbY_Close,
+    "Qs": ibmY_Q, "Qmarks": ibmY_Ql}
     return jsonify(ibmY_dict)
 
 @app.route("/IntelY")
@@ -108,7 +117,10 @@ def intelY():
     intelY_DatesN = intelY["Dates_Normal"]
     intelY_Vol = intelY["Volume"]
     intelY_Close = intelY["Close"]
-    intelY_dict  = {"title":intelY_title, "Change":intelY_numbers, "Dates": intelY_Dates, "DatesN": intelY_DatesN, "Volume": intelY_Vol, "Close":intelY_Close}
+    intelY_Q = intelY["Qs"]
+    intelY_Ql = intelY["Qmarks"]
+    intelY_dict  = {"title":intelY_title, "Change":intelY_numbers, "Dates": intelY_Dates, "DatesN": intelY_DatesN, "Volume": intelY_Vol,
+     "Close":intelY_Close, "Qs": intelY_Q, "Qmarks": intelY_Ql}
     return jsonify(intelY_dict)
 
 
@@ -126,7 +138,10 @@ def msftY():
     msftlYY_DatesN = msftlY["Dates_Normal"]
     msftlY_Vol = msftlY["Volume"]
     msftlYY_Close = msftlY["Close"]
-    msftlY_dict  = {"title":msftlY_title, "Change":msftlY_numbers, "Dates": msftlY_Date, "DatesN": msftlYY_DatesN, "Volume": msftlY_Vol, "Close":msftlYY_Close}
+    msftlYY_Q = msftlY["Qs"]
+    msftlY_Ql = msftlY["Qmarks"]
+    msftlY_dict  = {"title":msftlY_title, "Change":msftlY_numbers, "Dates": msftlY_Date, "DatesN": msftlYY_DatesN, "Volume": msftlY_Vol,
+    "Close":msftlYY_Close, "Qs": msftlYY_Q, "Qmarks": msftlY_Ql}
     return jsonify(msftlY_dict)
 
 # create a index route
