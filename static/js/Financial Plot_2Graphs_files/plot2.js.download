@@ -204,7 +204,7 @@ function buildPlot4(stock4) {
     // var startDate = "1980-12-31";
     // var endDate = "2018-09-30";
     var dates4 = data4.Dates;
-    var volume4 = data4.Volume;
+    var volume4 = data4.volume;
     // for( var i = 0 ; i < PercentChanges4.length ; i++ ) {
     //   PercentChanges4[i] = PercentChanges4[i] + "%";
     //   console.log ( "PercentChanges4", PercentChanges4)
