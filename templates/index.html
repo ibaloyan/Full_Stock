@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Money of the Future</title>
+    <title>Full Stock</title>
 <!-- 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
 <!-- 	<link rel="icon" href="favicon.ico" type="image/x-icon"> -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename= 'libs/font-awesome/css/font-awesome.min.css' }}">
-    <link href="{{ url_for('static', filename= 'css/bootstrap.min.css' }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename= 'css/styles.css' }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'libs/font-awesome/css/font-awesome.min.css') }}">
+    <link href="{{ url_for('static', filename= 'css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename= 'css/styles.css') }}" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
   	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
@@ -34,34 +34,20 @@
                 <a href="#experience">About the Project</a>  <!-- href -->
             </li>
             <li>
+                <a href=#skills>Tools</a>
+            </li>
+            <li>
                 <a href="#project">Visualizations</a>
             </li>
-
-
-
-<!--            <li>
-            <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapsed" data-target=#myNavbar" aria-expanded="false" aria-controls="navbar">
-                            <span class='icon-bar'></span>
-                        </button>
-                        <a class="activate navbar-brand brand_color" href="visualizations.html">Visualizations</a>
-                    </div>
-                </div>
-            </nav>
-            </li> -->
-
- <!--       <li>
-                <a href="visualizations.html">Visualizations</a>
-            </li> -->
         </ul>
+
+
     </header>
     <!-- End header -->
 
     <div id="lead">
         <div id="lead-content">
-            <center><h1>The Money of the Future</center></h1>
+            <center><h1>Full Stock</center></h1>
             <div class="social">
             </div>
         </div>
@@ -86,25 +72,25 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <img class="img-circle" src="{{ url_for('static', filename= 'images/vero.png' }}">
+                    <img class="img-circle" src="{{ url_for('static', filename= 'images/vero.png') }}">
                         <div class="card-body text-center">
                             <h2 class="card-title">Veronika Tueros</h2>
-                            <h5 class="eboard-title">Visual Tech Analyst</h5>
+                            <h4 class="eboard-title">Visual Tech Analyst</h5>
                         </div>
                     
                 </div>
                 <div class="col-md-4">
-                    <img class="img-circle" src=""{{ url_for('static', filename= 'images/inna.png' }}">
+                    <img class="img-circle" src="{{ url_for('static', filename= 'images/inna.png') }}">
                         <div class="card-body text-center">
-                            <h2 class="card-title">Inna Baloyan</h2>
-                            <h5 class="eboard-title">Visual Data Analyst</h5>
+                            <h2 class="card-titlex">Inna Baloyan</h2>
+                            <h4 class="eboard-title">Visual Data Analyst</h5>
                         </div>
                 </div>
                 <div class="col-md-4">
-                    <img class="img-circle" src="{{ url_for('static', filename= 'images/rj.png' }}">
+                    <img class="img-circle" src="{{ url_for('static', filename= 'images/michael.png') }}">
                         <div class="card-body text-center">
-                            <h2 class="card-title">Roderick Jean</h2>
-                            <h5 class="eboard-title">Digital Analyst</h5>
+                            <h2 class="card-title">Michael Rutkowski</h2>
+                            <h4 class="eboard-title">Data Engineer</h5>
                         </div>
                 </div>
 
@@ -115,18 +101,18 @@
 <!-- row -->
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <img class="img-circle" src="{{ url_for('static', filename= 'images/jose.png' }}">
+                <div class="col-md-6">
+                    <img class="img-circle" src="{{ url_for('static', filename= 'images/jose.png') }}">
                         <div class="card-body text-center">
                             <h2 class="card-title">Jose Villalba</h2>
-                            <h5 class="eboard-title">Marketing Consultant</h5>
+                            <h4 class="eboard-title">Marketing Consultant</h5>
                         </div> 
                 </div>
-                <div class="col-md-4">
-                    <img class="img-circle" src="{{ url_for('static', filename= 'images/michael.png' }}">
+                <div class="col-md-6">
+                    <img class="img-circle" src="{{ url_for('static', filename= 'images/rj.png') }}">
                         <div class="card-body text-center">
-                            <h2 class="card-title">Michael Rutkowski</h2>
-                            <h5 class="eboard-title">Data Engineer</h5>
+                            <h2 class="card-title">Roderick Jean</h2>
+                            <h4 class="eboard-title">Digital Analyst</h5>
                         </div>
                 </div>
             </div>
@@ -135,7 +121,7 @@
     <!-- End #about -->
 
     <div id="experience" class="background-alt"> <!-- id experience? / class?-->
-        <h2 class="heading">Bitcoin Overview</h2>
+        <h2 class="heading">About the Project</h2>
         <div id="experience-timeline">
           
 
@@ -175,34 +161,40 @@
 
     <div id="skills">
 
-       <h1><font color="white">Skills</font></h1>
+       <h1><font color="white">Tools</font></h1>
        <ul>
             <li>JavaScript</li>
             <li>MongoDB</li>
             <li>Python</li>
             <li>HTML</li>
             <li>CSS</li>
+            <li>Jupyter</li>
+            <li>Flask</li>
         </ul>
+        <h2><font color="white">Disclaimer:      The information provided here is for PROJECT PURPOSES ONLY<br /> and it SHOULD NOT be considered legal or financial advice.</font></h2>
     </div>
 
-    <form class="form-inline">
-     <div class="form-group">
+    <div id="project">
+
+        <form class="form-inline">
+        <div class="form-group">
       <!-- <label for="stockInput">Stock</label> -->
       <!-- <input type="text" class="form-control" id="stockInput" placeholder="Enter a stock"> -->
-    </div>
+        </div>
     <!-- <button id="submit" type="submit" class="btn btn-default">Plot Stock</button>
   </form> -->
-  <div id="plot1"></div>
-  <div id="plot2"></div>
-  <div id="plot3"></div>
-  <div id="plot4"></div>
-  <script src="{{ url_for('static', filename='js/plot1.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/plot2.js') }}"></script>
-  <!-- <script src="{{ url_for('static', filename='js/plot3.js') }}"></script> -->
-  <!-- <script src="{{ url_for('static', filename='js/plot4.js') }}"></script> -->
-  <!-- <script src="{{ url_for('static', filename='js/plots_proj.js') }}"></script> -->
-  <!-- <script src="plots_proj.js"></script> -->   
-
+        <div id="plot1"></div>
+        <div id="plot2"></div>
+        <div id="plot3"></div>
+        <div id="plot4"></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        <script src="{{ url_for('static', filename='js/plot1.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/plot2.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/plot3.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/plot4.js') }}"></script> -->
+    <!-- <script src="{{ url_for('static', filename='js/plots_proj.js') }}"></script> -->
+    <!-- <script src="plots_proj.js"></script> -->   
+    </div>
 
     <footer>
         <div class="container">
@@ -210,7 +202,7 @@
             <div class="row">
                 <div class="col-sm-5 copyright">
                     <p>
-                        Copyright &copy; 2018 Mario DeLaPaz <!-- <a href="index.html"></a> ..... </a>-->
+                        Copyright &copy; 2018 Data Kings <!-- <a href="index.html"></a> ..... </a>-->
                     </p>
                 </div>
                 <div class="col-sm-2 top">
@@ -221,16 +213,7 @@
                 <div class="social">
                     <ul>
                         <li>
-                            <a href="https://github.com/mariocd10" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/mariocd10/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/mario.delapaz" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/mariocd10" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="https://github.com/mjr390/Full_Stock" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -240,7 +223,7 @@
     <!-- End footer -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="{{ url_for('static', filename= 'js/scripts.min.js' }}"></script>
+    <script src="{{ url_for('static', filename= 'js/scripts.min.js' )}}"></script>
 </body>
 
 </html>
