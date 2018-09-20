@@ -1,7 +1,7 @@
 // Money_of_the_Future project
 // Auhor: Inna Baloyan
 // Project Stock data: AAPL("Apple"), MSFT("Microsoft"), Intel("INTC"), IBM("IBM")   
-// Plot Volume data for all 4 securities
+// Plot Closing Price data for all 4 securities
 
 //////////////////////////////////////////////////////////////////
 // Build IBM Plot
@@ -22,7 +22,9 @@ function buildPlot3(stock3) {
     var startDate = "1962-01-31";
     var endDate = "2018-09-30";
     var dates3 = data3.Dates;
+
     var close3 = data3.Close;
+
     console.log( "Data3", data3)
 
     var trace3 = {
@@ -30,7 +32,9 @@ function buildPlot3(stock3) {
       mode: "lines",
       name: name3,
       x: dates3,
+
       y: close3,
+
       line: {
         color: "green",
         width: 3
@@ -49,7 +53,9 @@ function buildPlot3(stock3) {
       showlegend: true,
       // height: 1200,
       // width: 1200,
+
       title: "Microsoft, Apple, Intel, IBM Stocks Closing Prices over Security Life Span",
+
       xaxis: {
         title: "Securities Life Span",
         font: {
@@ -61,7 +67,9 @@ function buildPlot3(stock3) {
         type: "date"
       },
       yaxis: {
+
         title: "Closing Prices",
+
         autorange: true,
         type: "linear"
       }
@@ -102,7 +110,9 @@ function buildPlot1(stock1) {
     // var startDate = "1980-12-31";
     // var endDate = "2018-09-30";
     var dates1 = data1.Dates;
+
     var close1 = data1.Close;
+
     console.log( "Data1", data1)
 
     var trace1 = {
@@ -110,7 +120,9 @@ function buildPlot1(stock1) {
       mode: "lines",
       name: name1,
       x: dates1,
+
       y: close1,
+
       line: {
         color: "#17BECF", // bluish color
         width: 3
@@ -126,7 +138,9 @@ function buildPlot1(stock1) {
     var data1 = [trace1];
      
     // Update Plot1 with Microsoft Data
+
        Plotly.addTraces("plot3", data1);
+
 
   });
 }
@@ -153,7 +167,9 @@ function buildPlot2(stock2) {
     // var startDate = "1980-12-31";
     // var endDate = "2018-09-30";
     var dates2 = data2.Dates;
+
     var close2 = data2.Close;
+
     console.log( "Data2", data2)
 
     var trace2 = {
@@ -161,7 +177,9 @@ function buildPlot2(stock2) {
       mode: "lines",
       name: name2,
       x: dates2,
+
       y: close2,
+
       line: {
         color: "red",
         width: 2
@@ -177,6 +195,7 @@ function buildPlot2(stock2) {
     var data2 = [trace2];
 
        // Update Plot1 with Apple Data
+
        Plotly.addTraces("plot3", data2);
 
   });
@@ -204,7 +223,9 @@ function buildPlot4(stock4) {
     // var startDate = "1980-12-31";
     // var endDate = "2018-09-30";
     var dates4 = data4.Dates;
+
     var close4 = data4.Close;
+
     // for( var i = 0 ; i < PercentChanges4.length ; i++ ) {
     //   PercentChanges4[i] = PercentChanges4[i] + "%";
     //   console.log ( "PercentChanges4", PercentChanges4)
@@ -216,7 +237,9 @@ function buildPlot4(stock4) {
       mode: "lines",
       name: name4,
       x: dates4,
+
       y: close4,
+
       line: {
         color: "gold",
         width: 2
@@ -232,6 +255,7 @@ function buildPlot4(stock4) {
     var data4 = [trace4];
 
       // Update Plot1 with Intel Data
+
        Plotly.addTraces("plot3", data4);
 
   });
