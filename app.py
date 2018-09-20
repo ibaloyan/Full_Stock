@@ -18,50 +18,50 @@ app = Flask(__name__)
 # db = mongo.db
 
 # create a route for scraping
-@app.route("/bit_y_o_y")
-##### Give new name
-def BTC_vs_BTC():
-    app.config["MONGO_URI"] = 'mongodb://localhost:27017/bitcoin_y_o_y'
-    mongo = PyMongo(app)
-    db = mongo.db
+# @app.route("/bit_y_o_y")
+# ##### Give new name
+# def BTC_vs_BTC():
+#     app.config["MONGO_URI"] = 'mongodb://localhost:27017/bitcoin_y_o_y'
+#     mongo = PyMongo(app)
+#     db = mongo.db
 
-    btcY = db.bit_y_o_y.find_one()
-    print(btcY)
-    btcY_title = btcY["labels"]
-    btcY_numbers = btcY["numbers"]
-    btcY_dict = {"title":btcY_title, "numbers": btcY_numbers}
-    print(btcY_title)
-    # return appl_title
-    return jsonify(btcY_dict)
-
-
-@app.route("/btc_v_all")
-def btc_v_all1():
-    app.config["MONGO_URI"] = 'mongodb://localhost:27017/bitcoin_v_All'
-    mongo = PyMongo(app)
-    db = mongo.db
-
-    btcA = db.bitcoin_v_All1.find_one()
-    print(btcA)
-    btcA_title = btcA["labels"]
-    btcA_numbers = btcA["numbers"]
-    btcA_Dates = btcA["Dates"]
-    btcA_dict  = {"title":btcA_title, "numbers":btcA_numbers, "Dates": btcA_Dates}
-    return jsonify(btcA_dict)
+#     btcY = db.bit_y_o_y.find_one()
+#     print(btcY)
+#     btcY_title = btcY["labels"]
+#     btcY_numbers = btcY["numbers"]
+#     btcY_dict = {"title":btcY_title, "numbers": btcY_numbers}
+#     print(btcY_title)
+#     # return appl_title
+#     return jsonify(btcY_dict)
 
 
-@app.route("/btc_Q")
-def btc_Q():
-    app.config["MONGO_URI"] = 'mongodb://localhost:27017/bitcoin_Q'
-    mongo = PyMongo(app)
-    db = mongo.db
+# @app.route("/btc_v_all")
+# def btc_v_all1():
+#     app.config["MONGO_URI"] = 'mongodb://localhost:27017/bitcoin_v_All'
+#     mongo = PyMongo(app)
+#     db = mongo.db
 
-    btcQ = db.bitcoin_q.find_one()
-    print(btcQ)
-    btcQ_title = btcQ["labels"]
-    btcQ_numbers = btcQ["numbers"]
-    btcQ_dict  = {"title":btcQ_title, "numbers":btcQ_numbers}
-    return jsonify(btcQ_dict)
+#     btcA = db.bitcoin_v_All1.find_one()
+#     print(btcA)
+#     btcA_title = btcA["labels"]
+#     btcA_numbers = btcA["numbers"]
+#     btcA_Dates = btcA["Dates"]
+#     btcA_dict  = {"title":btcA_title, "numbers":btcA_numbers, "Dates": btcA_Dates}
+#     return jsonify(btcA_dict)
+
+
+# @app.route("/btc_Q")
+# def btc_Q():
+#     app.config["MONGO_URI"] = 'mongodb://localhost:27017/bitcoin_Q'
+#     mongo = PyMongo(app)
+#     db = mongo.db
+
+#     btcQ = db.bitcoin_q.find_one()
+#     print(btcQ)
+#     btcQ_title = btcQ["labels"]
+#     btcQ_numbers = btcQ["numbers"]
+#     btcQ_dict  = {"title":btcQ_title, "numbers":btcQ_numbers}
+#     return jsonify(btcQ_dict)
 #
 @app.route("/applY")
 def applY():
