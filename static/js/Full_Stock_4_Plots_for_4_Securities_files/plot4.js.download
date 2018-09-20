@@ -5,7 +5,7 @@
 
 //////////////////////////////////////////////////////////////////
 
-// Utilize Chart.js library for building Grouped Bar Chart for Stock Quarters
+// Utilize Chart.js library for buiding Grouped Bar Chart for Stock Quarters
 
 var IBM_Q = [];
 var MSTFY_Q = [];
