@@ -85,7 +85,7 @@ def applY():
 
 @app.route("/IBMY")
 def ibmY():
-    app.config["MONGO_URI"] = 'mongodb://localhost:27017/IBM_y_y'
+    app.config["MONGO_URI"] = 'mongodb://localhost:27017/IBM_y_y' or "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623/heroku_8nx1c4b9"
     mongo = PyMongo(app)
     db = mongo.db
 
@@ -105,7 +105,7 @@ def ibmY():
 
 @app.route("/IntelY")
 def intelY():
-    app.config["MONGO_URI"] = 'mongodb://localhost:27017/Intel_y_y'
+    app.config["MONGO_URI"] = 'mongodb://localhost:27017/Intel_y_y' or "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623/heroku_8nx1c4b9"
     mongo = PyMongo(app)
     db = mongo.db
 
@@ -126,7 +126,7 @@ def intelY():
 
 @app.route("/MSFTY")
 def msftY():
-    app.config["MONGO_URI"] = 'mongodb://localhost:27017/MSFT_y_y'
+    app.config["MONGO_URI"] = 'mongodb://localhost:27017/MSFT_y_y' or "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623/heroku_8nx1c4b9"
     mongo = PyMongo(app)
     db = mongo.db
 
