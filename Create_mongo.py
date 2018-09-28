@@ -96,8 +96,8 @@ def populate():
     import pymongo
 
     # Create connection variable
-    conn = 'mongodb://localhost:27017'
-
+    conn = 'mongodb://localhost:27017' or "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623/heroku_8nx1c4b9"
+    
     # Pass connection to the pymongo instance.
     client = pymongo.MongoClient(conn)
 
@@ -198,7 +198,7 @@ def populate():
 
     }
 
-    conn = 'mongodb://localhost:27017'
+    conn = 'mongodb://localhost:27017' or "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623/heroku_8nx1c4b9"
 
     # Pass connection to the pymongo instance.
     client = pymongo.MongoClient(conn)
