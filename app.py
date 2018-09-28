@@ -65,7 +65,7 @@ app = Flask(__name__)
 #
 @app.route("/applY")
 def applY():
-    app.config["MONGO_URI"] = 'mongodb://localhost:27017/Apple_y_y'
+    app.config["MONGO_URI"] = 'mongodb://localhost:27017/Apple_y_y' or "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623/heroku_8nx1c4b9"
     mongo = PyMongo(app)
     db = mongo.db
 
