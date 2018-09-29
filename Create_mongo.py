@@ -96,14 +96,15 @@ def populate():
     import pymongo
 
     # Create connection variable
-    # conn = 'mongodb://localhost:27017' or "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623/heroku_8nx1c4b9"
-    conn = 'mongodb://localhost:27017' or "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623"
-    
+    conn = 'mongodb://localhost:27017' or "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623/heroku_8nx1c4b9"
+        
     # Pass connection to the pymongo instance.
     client = pymongo.MongoClient(conn)
 
     # Connect to a database. Will create one if not already available.
-    db = client.Apple_y_y
+    # db = client.Apple_y_y
+    # Fix done by in for Heroku deployment
+    db = client.heroku_8nx1c4b9
 
     # Drops collection if available to remove duplicates
     db.apple_y_o_y.drop()
@@ -199,14 +200,16 @@ def populate():
 
     }
 
+    # Fix done by in for Heroku deployment
     # conn = 'mongodb://localhost:27017' or "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623/heroku_8nx1c4b9"
-    conn = 'mongodb://localhost:27017' or "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623"
-
+ 
     # Pass connection to the pymongo instance.
     client = pymongo.MongoClient(conn)
 
     # Connect to a database. Will create one if not already available.
-    db = client.IBM_y_y
+    # db = client.IBM_y_y
+    # Fix done by in for Heroku deployment
+    db = client.heroku_8nx1c4b9
 
     # Drops collection if available to remove duplicates
     db.ibm_y_o_y.drop()
