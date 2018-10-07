@@ -1,4 +1,4 @@
-import quandl
+import quandl as quandl
 from datetime import datetime
 import pandas as pd
 
@@ -96,8 +96,9 @@ def populate():
     import pymongo
 
     # Create connection variable
-    conn = 'mongodb://localhost:27017' or "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623/heroku_8nx1c4b9"
-        
+    # conn = 'mongodb://localhost:27017' or "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623/heroku_8nx1c4b9"
+    conn = "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623/heroku_8nx1c4b9"
+
     # Pass connection to the pymongo instance.
     client = pymongo.MongoClient(conn)
 
@@ -305,7 +306,10 @@ def populate():
 
     }
 
-    db = client.Intel_y_y
+    # Connect to a database. Will create one if not already available.
+    # db = db = client.Intel_y_y
+    # Fix done by in for Heroku deployment
+    db = client.heroku_8nx1c4b9
 
     # Drops collection if available to remove duplicates
     db.intel_y_o_y.drop()
@@ -400,7 +404,10 @@ def populate():
         "Qmarks": ["1","2","3","4"]
     }
 
-    db = client.MSFT_y_y
+    # Connect to a database. Will create one if not already available.
+    # db = client.MSFT_y_y
+    # Fix done by in for Heroku deployment
+    db = client.heroku_8nx1c4b9
 
     # Drops collection if available to remove duplicates
     db.msft_y_o_y.drop()
