@@ -1,4 +1,4 @@
-import quandl as quandl
+import quandl
 from datetime import datetime
 import pandas as pd
 
@@ -65,6 +65,7 @@ def populate():
     apple_sort2 = Appledata.iloc[113:226]
     apple_sort3 = Appledata.iloc[226:340]
     apple_sort4 = Appledata.iloc[340:]
+    last_q_apple = len(Appledata.iloc[340:])-1
 
     a1_O = apple_sort1.iloc[:1]["Open"]
     a1_C = apple_sort1.iloc[112:]["Close"]
@@ -79,7 +80,7 @@ def populate():
     a3 = round((int(a3_C)-int(a3_O))/int(a3_O)*100,2)
 
     a4_O = apple_sort4.iloc[:1]["Open"]
-    a4_C = apple_sort4.iloc[113:]["Close"]
+    a4_C = apple_sort4.iloc[last_q_apple:]["Close"]
     a4 = round((int(a4_C)-int(a4_O))/int(a4_O)*100,2)
 
     Appl_json = {
@@ -95,6 +96,8 @@ def populate():
 
     import pymongo
 
+    # # Create connection variable
+    # conn = 'mongodb://localhost:27017'
     # Create connection variable
     # conn = 'mongodb://localhost:27017' or "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623/heroku_8nx1c4b9"
     conn = "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623/heroku_8nx1c4b9"
@@ -172,6 +175,7 @@ def populate():
     ib2 = IBMdata.iloc[170:340]
     ib3 = IBMdata.iloc[340:510]
     ib4 = IBMdata.iloc[510:]
+    last_q_ibm = len(IBMdata.iloc[510:])-1
 
     ib1_O = ib1.iloc[:1]["Open"]
     ib1_C = ib1.iloc[169:]["Close"]
@@ -186,7 +190,7 @@ def populate():
     ib3D = round((int(ib3_C)-int(ib3_O))/int(ib3_O)*100,2)
 
     ib4_O = ib4.iloc[:1]["Open"]
-    ib4_C = ib4.iloc[170:]["Close"]
+    ib4_C = ib4.iloc[last_q_ibm:]["Close"]
     ib4D = round((int(ib4_C)-int(ib4_O))/int(ib4_O)*100,2)
 
     IBM_json = {
@@ -201,6 +205,7 @@ def populate():
 
     }
 
+    # #conn = 'mongodb://localhost:27017'
     # Fix done by in for Heroku deployment
     # conn = 'mongodb://localhost:27017' or "mongodb://heroku_8nx1c4b9:gebgv4dmtcjvsgpgq8kbdd76g3@ds117623.mlab.com:17623/heroku_8nx1c4b9"
  
@@ -277,6 +282,7 @@ def populate():
     in_sort2 = Inteldata.iloc[115:231]
     in_sort3 = Inteldata.iloc[231:347]
     in_sort4 = Inteldata.iloc[347:]
+    last_q_i = len(Inteldata.iloc[347:])-1
 
     i1_O = in_sort1.iloc[:1]["Open"]
     i1_C = in_sort1.iloc[114:]["Close"]
@@ -291,7 +297,7 @@ def populate():
     i3 = round((int(i3_C)-int(i3_O))/int(i3_O)*100,2)
 
     i4_O = in_sort4.iloc[:1]["Open"]
-    i4_C = in_sort4.iloc[115:]["Close"]
+    i4_C = in_sort4.iloc[last_q_i:]["Close"]
     i4 = round((int(i4_C)-int(i4_O))/int(i4_O)*100,2)
 
     Intel_json = {
@@ -377,6 +383,7 @@ def populate():
     m_sort2 = Micodata.iloc[98:196]
     m_sort3 = Micodata.iloc[196:293]
     m_sort4 = Micodata.iloc[293:]
+    last_q_m = len(Micodata.iloc[293:])-1
 
     m1_O = m_sort1.iloc[:1]["Open"]
     m1_C = m_sort1.iloc[97:]["Close"]
@@ -391,7 +398,7 @@ def populate():
     m3 = round((int(m3_C)-int(m3_O))/int(m3_O)*100,2)
 
     m4_O = m_sort4.iloc[:1]["Open"]
-    m4_C = m_sort4.iloc[97:]["Close"]
+    m4_C = m_sort4.iloc[last_q_m:]["Close"]
     m4 = round((int(m4_C)-int(m4_O))/int(m4_O)*100,2)
     MSFT_json = {
         "numbers": changes,
