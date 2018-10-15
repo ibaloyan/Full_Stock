@@ -233,6 +233,10 @@ function buildPlot4(stock4) {
       // Update Plot1 with Intel Data
        Plotly.addTraces("plot1", data4);
 
+       // add two traces
+// Plotly.addTraces(graphDiv, [{y: [2,1,2]}, {y: [4, 5, 7]}]);
+// Plotly.addTraces(graphDiv, {y: [2,1,2]});
+
   });
 }
 
