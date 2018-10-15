@@ -3,10 +3,17 @@ from flask import Flask, render_template, jsonify
 from flask_pymongo import PyMongo
 import Create_mongo
 
+# # to overrun heroku problems
+# from flask_cors import CORS, cross_origin
+
 Create_mongo.populate()
 
 # init the Flask
 app = Flask(__name__)
+
+# to overrun heroku problems
+# cors = CORS(app)
+# app.config['CORS_HEADERS'] = 'Content-Type'
 
 # app.config["MONGO_URI"] = 'mongodb://localhost:27017/bitcoin_y_o_y'
 # mongo = PyMongo(app)
