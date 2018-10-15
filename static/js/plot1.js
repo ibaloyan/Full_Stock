@@ -3,6 +3,11 @@
 // Project Stock data: AAPL("Apple"), MSFT("Microsoft"), Intel("INTC"), IBM("IBM")   
 
 //////////////////////////////////////////////////////////////////
+var my_data1 = [];
+var my_data2 = [];
+var my_data3 = [];
+var my_data4 = [];
+
 // Build IBM Plot
 
 var stock3 = "IBM";
@@ -42,7 +47,9 @@ function buildPlot3(stock3) {
       text: labels3
     };
 
-    var data3 = [trace3];
+    my_data3 = [trace3];
+    console.log( "my_data3", my_data3)
+
 
     var layout = {
       showlegend: true,
@@ -67,7 +74,7 @@ function buildPlot3(stock3) {
     };
   
       // Create new Plot1 with IBM Data
-       Plotly.newPlot("plot1", data3, layout);
+       Plotly.newPlot("plot1", my_data3, layout);
 
   });
 }
@@ -122,10 +129,12 @@ function buildPlot1(stock1) {
       text: labels1
     };
 
-    var data1 = [trace1];
+    my_data1 = [trace1];
+    console.log( "my_data1", my_data1)
+
      
     // Update Plot1 with Microsoft Data
-       Plotly.addTraces("plot1", data1);
+       Plotly.addTraces("plot1", my_data1);
 
   });
 }
@@ -173,10 +182,12 @@ function buildPlot2(stock2) {
       text: labels2
     };
 
-    var data2 = [trace2];
+    my_data2 = [trace2];
+    console.log( "my_data2", my_data2)
+
 
        // Update Plot1 with Apple Data
-       Plotly.addTraces("plot1", data2);
+       Plotly.addTraces("plot1", my_data2);
 
   });
 }
@@ -228,10 +239,11 @@ function buildPlot4(stock4) {
       text: labels4
     };
 
-    var data4 = [trace4];
+    my_data4 = [trace4];
+    console.log( "my_data4", my_data4)
 
       // Update Plot1 with Intel Data
-       Plotly.addTraces("plot1", data4);
+       Plotly.addTraces("plot1", my_data4);
 
        // add two traces
 // Plotly.addTraces(graphDiv, [{y: [2,1,2]}, {y: [4, 5, 7]}]);
