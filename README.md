@@ -1,6 +1,6 @@
 Full-Stock
      
-Building Plotly JavaScript plots ( and Chart.js ) based on life span stock data from Quandle  for Apple, IBM, Microsoft and Intel.  
+Building JavaScript plots [Plotly, Chart] based on life span stock data from Quandl API for Apple, IBM, Microsoft and Intel.  
 Technologies => JavaScript, Plotly, Chart.js, CSS, Heroku deployment https://full-stock-ib.herokuapp.com
      
      Hypothesis:Securities become more stable the longer they remain public in the stock market.
