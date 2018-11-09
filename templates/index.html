@@ -66,10 +66,10 @@
     <!-- End #lead -->
 
     <!-- About Us Section-->
-    <div id="about"> <!-- what is this doing? -->
+    <div id="about">
         <div class="row">
             <div class="row">
-                <h2 class="heading">About Us</h2>
+                <h2 class="heading"><b>About Us</b></h2>
             </div>
             <div class="row">
                 <div class="col-md-4">
@@ -118,7 +118,7 @@
     <!-- End #about -->
 
     <div id="experience" class="background-alt">
-        <h2 class="heading">About the Project</h2>
+        <h2 class="heading"><b><br>About the Project</b></h2>
         <div id="experience-timeline">
           
 
@@ -166,13 +166,16 @@
     </div>
 
     <div id="project">
-
-        <form class="form-inline">
+<!-- 
+        <form class="form-inline"> -->
         <div class="form-group">
 
         </div>
+ 
+        <div class="row">
+            <h2 class="heading"><b><br><br>Visualizations</b></h2>
+        </div>
 
-  </form> 
         <div id="plot1"></div>
         <div id="plot2"></div>
         <div id="plot3"></div>
@@ -184,7 +187,7 @@
         <script src="{{ url_for('static', filename='js/plot2_new.js') }}"></script>
         <script src="{{ url_for('static', filename='js/plot3_new.js') }}"></script>
         <script src="{{ url_for('static', filename='js/plot4.js') }}"></script>
-
+    <!-- </form>  -->
     </div>
 
     <footer>
