@@ -24,8 +24,9 @@ function buildPlot3(stock3) {
     var name3 = "IBM"; // for the legend on the side of the graph
     var labels3 = data3.title;
     var startDate = "1962-01-31";
-    var endDate = "2018-09-30";
+    var endDate = "2018-10-31";
     var dates3 = data3.Dates;
+    // var dates3 = data3.DatesN;
     var PercentChanges3 = data3.Change;
     console.log( "Data3", data3)
 
@@ -108,6 +109,7 @@ function buildPlot1(stock1) {
     // var startDate = "1980-12-31";
     // var endDate = "2018-09-30";
     var dates1 = data1.Dates;
+    // var dates1 = data1.DatesN;
     var PercentChanges1 = data1.Change;
     console.log( "Data1", data1)
 
@@ -161,6 +163,7 @@ function buildPlot2(stock2) {
     // var startDate = "1980-12-31";
     // var endDate = "2018-09-30";
     var dates2 = data2.Dates;
+    // var dates2 = data2.DatesN;
     var PercentChanges2 = data2.Change;
     console.log( "Data2", data2)
 
@@ -214,6 +217,7 @@ function buildPlot4(stock4) {
     // var startDate = "1980-12-31";
     // var endDate = "2018-09-30";
     var dates4 = data4.Dates;
+    // var dates4 = data4.DatesN;
     var PercentChanges4 = data4.Change;
     // for( var i = 0 ; i < PercentChanges4.length ; i++ ) {
     //   PercentChanges4[i] = PercentChanges4[i] + "%";
@@ -244,10 +248,6 @@ function buildPlot4(stock4) {
 
       // Update Plot1 with Intel Data
        Plotly.addTraces("plot1", my_data4);
-
-       // add two traces
-// Plotly.addTraces(graphDiv, [{y: [2,1,2]}, {y: [4, 5, 7]}]);
-// Plotly.addTraces(graphDiv, {y: [2,1,2]});
 
   });
 }
