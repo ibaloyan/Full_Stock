@@ -4,12 +4,14 @@ import pandas as pd
 
 def populate():
     # pull data for microsoft, apple, google, amazon , bitcoin
-    quandl.ApiConfig.api_key = "V2vzspYSYL8eenGuq8uF "
-    url = 'https://www.quandl.com/api/v3/databases/EOD/metadata?api_key=V2vzspYSYL8eenGuq8uF'
+    ###quandl.ApiConfig.api_key = "V2vzspYSYL8eenGuq8uF "
+    quandl.ApiConfig.api_key = '-VWwJTwTXLhfXXjqqmkz'
+    ####url = 'https://www.quandl.com/api/v3/databases/EOD/metadata?api_key=V2vzspYSYL8eenGuq8uF'
+    ####url = 'https://www.quandl.com/api/v3/databases/EOD/metadata?api_key=5JyAoky_UCm2VUbfZ4g5'
 
-    mydata = pd.DataFrame(quandl.get("EOD/AAPL",collapse="monthly"))
+    mydata = pd.DataFrame(quandl.get("WIKI/AAPL",collapse="monthly"))
 
-    Appledata = mydata[["Open","High","Low","Close","Volume","Split"]]
+    Appledata = mydata[["Open","High","Low","Close","Volume","Split Ratio"]]
 
     Appledata.reset_index(inplace = True)
 
@@ -119,9 +121,9 @@ def populate():
     )
 
     ##### Next Stock
-    mydata2 = quandl.get("EOD/IBM",collapse="monthly")
+    mydata2 = quandl.get("WIKI/IBM",collapse="monthly")
 
-    IBMdata = mydata2[["Open","High","Low","Close","Volume","Split"]]
+    IBMdata = mydata2[["Open","High","Low","Close","Volume","Split Ratio"]]
     IBMdata.reset_index(inplace = True)
 
     gg = []
@@ -226,8 +228,8 @@ def populate():
     )
 
     ### Next Stock
-    mydata3 = quandl.get("EOD/INTC",collapse="monthly")
-    Inteldata = mydata3[["Open","High","Low","Close","Volume","Split"]]
+    mydata3 = quandl.get("WIKI/INTC",collapse="monthly")
+    Inteldata = mydata3[["Open","High","Low","Close","Volume","Split Ratio"]]
     Inteldata.reset_index(inplace = True)
 
     gg = []
@@ -326,8 +328,8 @@ def populate():
     )
 
 
-    mydata1 = quandl.get("EOD/MSFT",collapse="monthly")
-    Micodata = mydata1[["Open","High","Low","Close","Volume","Split"]]
+    mydata1 = quandl.get("WIKI/MSFT",collapse="monthly")
+    Micodata = mydata1[["Open","High","Low","Close","Volume","Split Ratio"]]
     Micodata.reset_index(inplace = True)
 
     gg = []
